@@ -1,0 +1,23 @@
+/* App-specific styles - keeping this minimal as most styles are in index.css */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Swiper custom styles */
+.swiper-pagination-bullet {
+  background: var(--primary);
+  opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--primary);
+  opacity: 1;
+}
+
+/* Hide default swiper navigation */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none;
+}
