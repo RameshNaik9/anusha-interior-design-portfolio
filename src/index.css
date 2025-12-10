@@ -33,11 +33,8 @@
 }
 
 /* Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Tailwind's Preflight handles resets, so we don't need a manual * reset here */
+
 
 html {
   scroll-behavior: smooth;
