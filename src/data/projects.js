@@ -4,25 +4,25 @@
 export const projects = [
   {
     id: 1,
-    title: "3BHK Residential Apartment",
-    subtitle: "Space Planning & Furniture Layout",
+    title: "3BHK Residential Interior Planning",
+    subtitle: "Floor Plan & Detailed Elevation Set",
     category: "residential",
     type: "Course Project",
     tools: ["AutoCAD"],
-    description: "A complete 3BHK apartment floor plan with optimized space planning, furniture layout, and circulation paths. This project demonstrates expertise in residential design with attention to functionality and aesthetics.",
+    description: "Developed a fully-dimensioned 3BHK residential interior plan including furniture layout, circulation design, and detailed interior elevations for the kitchen and master bedroom. Ensured accuracy in measurements, clear zoning, functional flow, and CAD-standard sheet presentation.",
     highlights: [
-      "Drafted complete 3BHK plan: living/dining, bedrooms, kitchen, balcony & toilets",
-      "Used layer-based CAD setup with proper line weights and dimensioning",
-      "Designed furniture layout with optimized circulation paths",
-      "Coordinated door swings, wardrobe placement, and seating for zoning efficiency",
-      "Created final presentation sheet (PDF) suitable for client discussions"
+      "Drafted complete 3BHK furniture layout with bedroom, living, dining, balcony, kitchen, and toilet zoning",
+      "Designed furniture placements ensuring proper circulation clearances and door swings",
+      "Created detailed kitchen floor plan + 3 elevations showing base units, overhead storage, and dimensional detailing",
+      "Produced master bedroom plan + wardrobe elevation + study/electrical layout",
+      "Applied CAD annotation standards including dimension styles, hatch patterns, symbols, and elevation markers"
     ],
     images: [
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80"
+      "/images/project1-3bhk-floor-plan.png",
+      "/images/project1-3bhk-kitchen-elevations.png",
+      "/images/project1-3bhk-master-bedroom-elevations.png"
     ],
-    coverImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"
+    coverImage: "/images/project1-3bhk-floor-plan.png"
   },
   {
     id: 2,
