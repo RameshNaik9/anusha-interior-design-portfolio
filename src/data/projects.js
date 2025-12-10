@@ -26,26 +26,27 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Bedroom, Living & Dining Set",
-    subtitle: "3D Modeling & Visualization",
-    category: "visualization",
-    type: "Course Project",
-    tools: ["AutoCAD", "SketchUp", "Enscape"],
-    description: "A comprehensive 3D visualization project featuring a master bedroom, living room with TV focal wall, and dining area. Complete with realistic Enscape renders showcasing material selections and lighting design.",
+    title: "1BHK Residential Interior Design",
+    subtitle: "Space Planning & 3D Visualization",
+    category: "residential",
+    type: "Residential Project",
+    tools: ["AutoCAD", "SketchUp"],
+    description: "Complete design and visualization of a 1BHK residential apartment, including floor planning, interior layout development, and 3D visualization. The goal was to create an efficient, aesthetic, and functional home interior within limited square footage, balancing comfort, storage, and modern styling.",
     highlights: [
-      "Created master bedroom plan with wardrobe, dresser & study corner",
-      "Converted CAD drawings into detailed SketchUp 3D model",
-      "Designed living room with TV focal wall, sofa set, accent chairs & coffee table",
-      "Planned dining area with modular storage and material finishes",
-      "Rendered realistic images with adjusted lighting and camera angles"
+      "Prepared a detailed 1BHK floor plan with accurate measurements and optimized spatial layout",
+      "Designed a cozy and functional bedroom with soft upholstered headboard and full-height wardrobes",
+      "Visualized open concept kitchen–dining layout with floating wall shelves and center dining table",
+      "Developed a U-shaped modular kitchen with upper & lower cabinetry and textured dado tiles",
+      "Designed a modern living room with L-shaped sofa, TV unit, and designer partition panel"
     ],
     images: [
-      "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80"
+      "/images/project2-1bhk-floor-plan.png",
+      "/images/project2-1bhk-living-room.png",
+      "/images/project2-1bhk-bedroom.png",
+      "/images/project2-1bhk-kitchen.png",
+      "/images/project2-1bhk-dining.png"
     ],
-    coverImage: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80"
+    coverImage: "/images/project2-1bhk-living-room.png"
   },
   {
     id: 3,
