@@ -137,16 +137,27 @@ const Hero = () => {
             </motion.div>
 
             {/* Heading */}
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
-              <span className="text-text-primary">Designing</span>
-              <br />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-secondary to-accent">
-                Experiences
-              </span>
-            </h1>
+            <div className="mb-10 relative z-20">
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-text-primary leading-none mb-1">
+                Designing
+              </h1>
+              <div className="flex flex-col items-start">
+                <motion.span 
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="text-lg md:text-2xl text-text-secondary font-light italic ml-1"
+                >
+                  Transforming Spaces into
+                </motion.span>
+                <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-linear-to-r from-primary via-secondary to-accent leading-[0.9] mt-1 pb-2">
+                  EXPERIENCES
+                </h1>
+              </div>
+            </div>
 
             <p className="text-lg md:text-xl text-text-secondary max-w-lg mb-10 leading-relaxed font-light">
-              {personalInfo.tagline}. I am <span className="text-text-primary font-medium">{personalInfo.name}</span>, 
+              I am <span className="text-text-primary font-medium">{personalInfo.name}</span>, 
               an {personalInfo.title} specializing in {personalInfo.subtitle}.
             </p>
 
