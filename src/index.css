@@ -28,6 +28,8 @@
   
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
+  
+  --animate-shimmer: shimmer 2s infinite;
 }
 
 /* Base Styles */
@@ -246,4 +248,11 @@ img {
   align-items: center;
   justify-content: center;
   color: var(--text-secondary);
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
 }
