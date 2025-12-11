@@ -1,7 +1,7 @@
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { ArrowRight, Sparkles, MousePointer2, Layers, Palette } from 'lucide-react';
 import { personalInfo } from '../data/projects';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Hero = () => {
   const mouseX = useMotionValue(0);
@@ -25,6 +25,25 @@ const Hero = () => {
 
   const shape3X = useTransform(x, [0, window.innerWidth], [-20, 20]);
   const shape3Y = useTransform(y, [0, window.innerHeight], [-20, 20]);
+
+  const [designingChars] = useState(() => 
+    "Designing".split("").map((char, i) => ({
+      char,
+      id: i,
+      x: Math.random() * 200 - 100,
+      y: Math.random() * 200 - 100,
+      r: Math.random() * 360 - 180
+    }))
+  );
+
+  const [particles] = useState(() => 
+    [...Array(40)].map((_, i) => ({
+      id: i,
+      x: Math.random() * 300 - 150,
+      y: Math.random() * 300 - 150,
+      scale: Math.random() * 1 + 0.5
+    }))
+  );
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -142,16 +161,74 @@ const Hero = () => {
               initial="initial"
               whileHover="hover"
             >
-              <motion.h1 
-                variants={{
-                  initial: { opacity: 1, filter: "blur(0px)" },
-                  hover: { opacity: 0, filter: "blur(4px)" }
-                }}
-                transition={{ duration: 0.3 }}
-                className="text-5xl md:text-7xl font-bold tracking-tight text-text-primary leading-none mb-1"
-              >
-                Designing
-              </motion.h1>
+              <div className="relative inline-block">
+                <motion.h1 
+                  variants={{
+                    initial: { opacity: 1, filter: "blur(0px)" },
+                    hover: { opacity: 0, filter: "blur(8px)" }
+                  }}
+                  transition={{ duration: 0.2 }}
+                  className="text-5xl md:text-7xl font-bold tracking-tight text-text-primary leading-none mb-1"
+                >
+                  Designing
+                </motion.h1>
+
+                {/* Exploding Characters */}
+                <motion.div
+                  variants={{
+                    initial: { opacity: 0, pointerEvents: "none" },
+                    hover: { opacity: 1, pointerEvents: "auto" }
+                  }}
+                  className="absolute inset-0 flex justify-start"
+                >
+                  {designingChars.map((item) => (
+                    <motion.span
+                      key={item.id}
+                      variants={{
+                        initial: { x: 0, y: 0, opacity: 1, rotate: 0, scale: 1 },
+                        hover: { 
+                          x: item.x, 
+                          y: item.y, 
+                          opacity: 0,
+                          rotate: item.r,
+                          scale: 0,
+                          transition: { duration: 0.8, ease: "easeOut" }
+                        }
+                      }}
+                      className="text-5xl md:text-7xl font-bold tracking-tight text-text-primary leading-none"
+                    >
+                      {item.char}
+                    </motion.span>
+                  ))}
+                </motion.div>
+
+                {/* Particles */}
+                <motion.div
+                  variants={{
+                    initial: { opacity: 0 },
+                    hover: { opacity: 1 }
+                  }}
+                  className="absolute inset-0 pointer-events-none"
+                >
+                  {particles.map((p) => (
+                    <motion.div
+                      key={p.id}
+                      variants={{
+                        initial: { x: 0, y: 0, opacity: 1, scale: 0 },
+                        hover: { 
+                          x: p.x, 
+                          y: p.y, 
+                          opacity: 0,
+                          scale: p.scale,
+                          transition: { duration: 0.6, ease: "easeOut" }
+                        }
+                      }}
+                      className="absolute left-1/2 top-1/2 w-1 h-1 bg-primary rounded-full"
+                    />
+                  ))}
+                </motion.div>
+              </div>
+
               <div className="relative inline-block">
                 <motion.span 
                   variants={{
@@ -163,7 +240,39 @@ const Hero = () => {
                 >
                   Transforming Spaces into
                 </motion.span>
-                <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-linear-to-r from-primary via-secondary to-accent leading-[0.9] mt-1 pb-2">
+                
+                {/* Glitch Layers */}
+                <motion.h1
+                  className="absolute inset-0 text-6xl md:text-8xl font-black tracking-tighter text-red-500 opacity-50 leading-[0.9] mt-1 pb-2 pointer-events-none select-none mix-blend-screen"
+                  variants={{
+                    initial: { opacity: 0, x: 0 },
+                    hover: { 
+                      opacity: 0.6,
+                      x: [-2, 3, -1, 4, -2],
+                      y: [1, -2, 2, -1, 1],
+                      transition: { repeat: Infinity, duration: 0.15, ease: "linear" }
+                    }
+                  }}
+                >
+                  EXPERIENCES
+                </motion.h1>
+                <motion.h1
+                  className="absolute inset-0 text-6xl md:text-8xl font-black tracking-tighter text-cyan-500 opacity-50 leading-[0.9] mt-1 pb-2 pointer-events-none select-none mix-blend-screen"
+                  variants={{
+                    initial: { opacity: 0, x: 0 },
+                    hover: { 
+                      opacity: 0.6,
+                      x: [2, -3, 1, -4, 2],
+                      y: [-1, 2, -2, 1, -1],
+                      transition: { repeat: Infinity, duration: 0.15, ease: "linear", delay: 0.05 }
+                    }
+                  }}
+                >
+                  EXPERIENCES
+                </motion.h1>
+
+                {/* Main Text */}
+                <h1 className="relative z-10 text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-linear-to-r from-primary via-secondary to-accent leading-[0.9] mt-1 pb-2">
                   EXPERIENCES
                 </h1>
               </div>
@@ -171,7 +280,10 @@ const Hero = () => {
 
             <p className="text-lg md:text-xl text-text-secondary max-w-lg mb-10 leading-relaxed font-light">
               I am <span className="text-text-primary font-medium">{personalInfo.name}</span>, 
-              an {personalInfo.title} specializing in {personalInfo.subtitle}.
+              an {personalInfo.title}
+              <span className="block mt-4 text-base md:text-lg font-normal text-text-secondary/80 tracking-wide">
+                • {personalInfo.subtitle}
+              </span>
             </p>
 
             {/* Buttons */}
