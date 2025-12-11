@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Heart, ArrowUp } from 'lucide-react';
 import { personalInfo } from '../data/projects';
 
@@ -30,7 +29,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-heading font-semibold mb-2">
+            <h3 className="text-2xl font-heading font-semibold mb-2 text-white">
               {personalInfo.name.split(' ')[0]}
               <span className="text-primary-light"> {personalInfo.name.split(' ')[1]}</span>
             </h3>

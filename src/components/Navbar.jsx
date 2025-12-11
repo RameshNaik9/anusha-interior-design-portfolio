@@ -114,7 +114,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/95 backdrop-blur-md border-t border-secondary"
+            className="md:hidden bg-white/95 backdrop-blur-md border-t border-secondary overflow-hidden"
           >
             <div className="container mx-auto px-6 py-6">
               <div className="flex flex-col gap-4">
@@ -131,16 +131,6 @@ const Navbar = () => {
                     {link.name}
                   </motion.a>
                 ))}
-                <motion.a
-                  href="#contact"
-                  onClick={(e) => handleNavClick(e, '#contact')}
-                  className="btn btn-primary mt-4"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  Get In Touch
-                </motion.a>
               </div>
             </div>
           </motion.div>
