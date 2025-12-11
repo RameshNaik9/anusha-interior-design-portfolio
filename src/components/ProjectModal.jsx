@@ -52,9 +52,9 @@ const ProjectModal = ({ project, onClose }) => {
           <X size={20} />
         </button>
 
-        <div className="grid lg:grid-cols-2 max-h-[90vh]">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 h-full">
           {/* Image Gallery */}
-          <div className="relative bg-secondary/30 aspect-square lg:aspect-auto">
+          <div className="relative bg-secondary/30 h-64 sm:h-80 lg:h-full w-full shrink-0">
             <Swiper
               modules={[Navigation, Pagination, Keyboard]}
               navigation={{
@@ -92,13 +92,13 @@ const ProjectModal = ({ project, onClose }) => {
             )}
 
             {/* Image Counter */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm text-text-primary">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm text-text-primary z-10">
               {activeIndex + 1} / {project.images.length}
             </div>
           </div>
 
           {/* Project Details */}
-          <div className="p-8 lg:p-10 overflow-y-auto max-h-[50vh] lg:max-h-[90vh]">
+          <div className="p-6 md:p-8 lg:p-10 overflow-y-auto flex-1 lg:h-full bg-white">
             {/* Category & Type */}
             <div className="flex items-center gap-2 mb-4">
               <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium uppercase tracking-wider">
