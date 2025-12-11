@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Heart, ArrowUp } from 'lucide-react';
 import { personalInfo } from '../data/projects';
 

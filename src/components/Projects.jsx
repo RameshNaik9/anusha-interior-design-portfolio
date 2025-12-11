@@ -87,7 +87,7 @@ const Projects = () => {
           animate={isInView ? 'visible' : 'hidden'}
           className="grid md:grid-cols-2 gap-8"
         >
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             {filteredProjects.map((project) => (
               <motion.div
                 key={project.id}
