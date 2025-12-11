@@ -1,9 +1,20 @@
 import { motion } from 'framer-motion';
-import { Heart, ArrowUp } from 'lucide-react';
+import { Heart, ArrowUp, Clock } from 'lucide-react';
 import { personalInfo } from '../data/projects';
+import { useState } from 'react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [lastUpdated] = useState(() => {
+    const date = new Date(document.lastModified);
+    return date.toLocaleString('en-US', { 
+      year: 'numeric', 
+      month: 'short', 
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  });
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -100,6 +111,16 @@ const Footer = () => {
               <Heart size={14} className="text-primary-light fill-primary-light" /> 
               for beautiful spaces
             </p>
+
+            {/* Stats */}
+            <div className="flex items-center gap-6 text-xs text-white/30">
+              {lastUpdated && (
+                <div className="flex items-center gap-1.5" title="Last Updated">
+                  <Clock size={14} />
+                  <span>Updated: {lastUpdated}</span>
+                </div>
+              )}
+            </div>
 
             {/* Back to Top */}
             <motion.button
