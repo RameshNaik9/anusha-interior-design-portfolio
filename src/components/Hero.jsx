@@ -137,16 +137,29 @@ const Hero = () => {
             </motion.div>
 
             {/* Heading */}
-            <div className="mb-10 relative z-20">
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-text-primary leading-none mb-1">
+            <motion.div 
+              className="mb-10 relative z-20 cursor-default"
+              initial="initial"
+              whileHover="hover"
+            >
+              <motion.h1 
+                variants={{
+                  initial: { opacity: 1, filter: "blur(0px)" },
+                  hover: { opacity: 0, filter: "blur(4px)" }
+                }}
+                transition={{ duration: 0.3 }}
+                className="text-5xl md:text-7xl font-bold tracking-tight text-text-primary leading-none mb-1"
+              >
                 Designing
-              </h1>
-              <div className="flex flex-col items-start">
+              </motion.h1>
+              <div className="relative inline-block">
                 <motion.span 
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="text-lg md:text-2xl text-text-secondary font-light italic ml-1"
+                  variants={{
+                    initial: { opacity: 0, x: 20, filter: "blur(4px)" },
+                    hover: { opacity: 1, x: 0, filter: "blur(0px)" }
+                  }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute bottom-full right-0 mb-2 text-lg md:text-2xl text-text-secondary font-thin italic tracking-widest text-right whitespace-nowrap"
                 >
                   Transforming Spaces into
                 </motion.span>
@@ -154,7 +167,7 @@ const Hero = () => {
                   EXPERIENCES
                 </h1>
               </div>
-            </div>
+            </motion.div>
 
             <p className="text-lg md:text-xl text-text-secondary max-w-lg mb-10 leading-relaxed font-light">
               I am <span className="text-text-primary font-medium">{personalInfo.name}</span>, 

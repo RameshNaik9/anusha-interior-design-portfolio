@@ -47,14 +47,11 @@ const About = () => {
             <div className="relative aspect-[4/5] max-w-md mx-auto lg:mx-0">
               {/* Main Image Placeholder */}
               <div className="absolute inset-0 bg-gradient-to-br from-secondary to-background-alt rounded-2xl overflow-hidden shadow-2xl">
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-4xl font-heading font-bold text-primary">AL</span>
-                    </div>
-                    <p className="text-text-secondary text-sm">Your Photo Here</p>
-                  </div>
-                </div>
+                <img 
+                  src="/images/profile-photo.png" 
+                  alt="Anusha Lahori" 
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Decorative Frame */}
@@ -81,8 +78,8 @@ const About = () => {
 
           {/* Content Side */}
           <motion.div variants={itemVariants} className="lg:pl-8">
-            <div className="decorative-line !ml-0" />
-            <h2 className="section-title !text-left !mb-6">
+            <div className="decorative-line ml-0!" />
+            <h2 className="section-title text-left! mb-6!">
               About Me
             </h2>
             
