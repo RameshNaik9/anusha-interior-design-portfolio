@@ -145,9 +145,9 @@ const Contact = () => {
                     </motion.a>
                   ))}
                 </div>
-                <p className="text-xs text-text-secondary/60 text-center mt-3">
-                  (Update with your actual links)
-                </p>
+                {/* <p className="text-xs text-text-secondary/60 text-center mt-3">
+                  (Update with actual links)
+                </p> */}
               </div>
             </motion.div>
           </div>

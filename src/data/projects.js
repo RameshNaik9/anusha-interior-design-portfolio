@@ -46,27 +46,30 @@ export const projects = [
       "/images/project2-1bhk-kitchen.png",
       "/images/project2-1bhk-dining.png"
     ],
-    coverImage: "/images/project2-1bhk-living-room.png"
+    coverImage: "/images/project2-1bhk-dining.png"
   },
   {
     id: 3,
-    title: "Compact 1BHK Apartment",
-    subtitle: "Floor Plan & Documentation",
-    category: "residential",
-    type: "Course Assignment",
-    tools: ["AutoCAD"],
-    description: "An efficient 1BHK layout design maximizing space utility and storage in a compact footprint. Features clean documentation with standardized CAD blocks and dimension settings.",
+    title: "1BHK Photorealistic Interior Design",
+    subtitle: "SketchUp Modeling & Enscape Rendering",
+    category: "visualization",
+    type: "Residential Project",
+    tools: ["SketchUp", "Enscape", "AutoCAD"],
+    description: "Designed a complete 1BHK residential interior starting from a detailed furniture floor plan to full 3D modeling in SketchUp. Developed realistic Enscape renders of bedroom, living room, kitchen, and dining to visualise material palettes, lighting, and spatial functionality.",
     highlights: [
-      "Designed compact 1BHK layout maximizing space efficiency and storage",
-      "Created clear circulation and functional zoning in small footprint",
-      "Used standardized blocks & dimension settings for clean documentation",
-      "Exported DWG & PDF sheets ready for printing or 3D modeling"
+      "Created a fully dimensioned 1BHK layout including living room, bedroom, dining area, and modular kitchen",
+      "Modeled detailed 3D interior with custom furniture, false ceiling, and feature walls using SketchUp",
+      "Designed a U-shaped modular kitchen with realistic textures, lighting, and ergonomic work triangle",
+      "Produced photorealistic Enscape renders showing daylight, artificial lighting, and material finishes",
+      "Planned functional zones with open-concept dining and cozy living area with decorative partition"
     ],
     images: [
-      "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=800&q=80",
-      "https://images.unsplash.com/photo-1598928506311-c55ez361a5d6?w=800&q=80"
+      "/images/project3-1bhk-render-living.png",
+      "/images/project3-1bhk-render-bedroom.png",
+      "/images/project3-1bhk-render-kitchen.png",
+      "/images/project3-1bhk-render-mirror.png"
     ],
-    coverImage: "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=800&q=80"
+    coverImage: "/images/project3-1bhk-render-living.png"
   },
   {
     id: 4,
