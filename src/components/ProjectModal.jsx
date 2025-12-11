@@ -55,46 +55,54 @@ const ProjectModal = ({ project, onClose }) => {
         <div className="flex flex-col lg:grid lg:grid-cols-2 flex-1 min-h-0 overflow-hidden rounded-2xl">
           {/* Image Gallery */}
           <div className="relative bg-secondary/30 h-64 sm:h-80 lg:h-full w-full shrink-0">
-            <Swiper
-              modules={[Navigation, Pagination, Keyboard]}
-              navigation={{
-                prevEl: '.swiper-button-prev-custom',
-                nextEl: '.swiper-button-next-custom',
-              }}
-              pagination={{ clickable: true }}
-              keyboard={{ enabled: true }}
-              onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-              className="h-full"
-            >
-              {project.images.map((image, index) => (
-                <SwiperSlide key={index}>
-                  <div className="w-full h-full flex items-center justify-center p-4">
-                    <img
-                      src={image}
-                      alt={`${project.title} - Image ${index + 1}`}
-                      className="max-w-full max-h-full object-contain rounded-lg"
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-
-            {/* Custom Navigation */}
-            {project.images.length > 1 && (
+            {project.images && project.images.length > 0 ? (
               <>
-                <button className="swiper-button-prev-custom absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-text-primary hover:bg-primary hover:text-white transition-colors shadow-lg">
-                  <ChevronLeft size={20} />
-                </button>
-                <button className="swiper-button-next-custom absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-text-primary hover:bg-primary hover:text-white transition-colors shadow-lg">
-                  <ChevronRight size={20} />
-                </button>
-              </>
-            )}
+                <Swiper
+                  modules={[Navigation, Pagination, Keyboard]}
+                  navigation={{
+                    prevEl: '.swiper-button-prev-custom',
+                    nextEl: '.swiper-button-next-custom',
+                  }}
+                  pagination={{ clickable: true }}
+                  keyboard={{ enabled: true }}
+                  onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+                  className="h-full"
+                >
+                  {project.images.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <div className="w-full h-full flex items-center justify-center p-4">
+                        <img
+                          src={image}
+                          alt={`${project.title} - Image ${index + 1}`}
+                          className="max-w-full max-h-full object-contain rounded-lg"
+                        />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
 
-            {/* Image Counter */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm text-text-primary z-10">
-              {activeIndex + 1} / {project.images.length}
-            </div>
+                {/* Custom Navigation */}
+                {project.images.length > 1 && (
+                  <>
+                    <button className="swiper-button-prev-custom absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-text-primary hover:bg-primary hover:text-white transition-colors shadow-lg">
+                      <ChevronLeft size={20} />
+                    </button>
+                    <button className="swiper-button-next-custom absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-text-primary hover:bg-primary hover:text-white transition-colors shadow-lg">
+                      <ChevronRight size={20} />
+                    </button>
+                  </>
+                )}
+
+                {/* Image Counter */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm text-text-primary z-10">
+                  {activeIndex + 1} / {project.images.length}
+                </div>
+              </>
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-text-secondary/40">
+                <span className="text-lg">No Images Available</span>
+              </div>
+            )}
           </div>
 
           {/* Project Details */}
@@ -147,7 +155,7 @@ const ProjectModal = ({ project, onClose }) => {
               <ul className="space-y-3">
                 {project.highlights.map((highlight, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <div className="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
                       <Check size={12} className="text-primary" />
                     </div>
                     <span className="text-text-secondary">{highlight}</span>

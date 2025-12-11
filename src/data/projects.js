@@ -86,11 +86,8 @@ export const projects = [
       "Ensured all members satisfied code performance limits",
       "Optimized member sizes for safety & material economy"
     ],
-    images: [
-      "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&q=80",
-      "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&q=80"
-    ],
-    coverImage: "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&q=80"
+    images: [],
+    coverImage: ""
   }
 ];
 
