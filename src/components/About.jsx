@@ -44,13 +44,13 @@ const About = () => {
         >
           {/* Image Side */}
           <motion.div variants={itemVariants} className="relative">
-            <div className="relative aspect-[4/5] max-w-md mx-auto lg:mx-0">
+            <div className="relative max-w-md mx-auto lg:mx-0">
               {/* Main Image Placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary to-background-alt rounded-2xl overflow-hidden shadow-2xl">
+              <div className="bg-linear-to-br from-secondary to-background-alt rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/images/profile-photo.png" 
                   alt="Anusha Lahori" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto block"
                 />
               </div>
 
