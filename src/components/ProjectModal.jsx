@@ -41,7 +41,7 @@ const ProjectModal = ({ project, onClose }) => {
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         transition={{ duration: 0.3 }}
-        className="relative w-full max-w-6xl max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl"
+        className="relative w-full max-w-6xl max-h-[90vh] bg-white rounded-2xl shadow-2xl flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -52,7 +52,7 @@ const ProjectModal = ({ project, onClose }) => {
           <X size={20} />
         </button>
 
-        <div className="flex flex-col lg:grid lg:grid-cols-2 h-full">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 flex-1 min-h-0 overflow-hidden rounded-2xl">
           {/* Image Gallery */}
           <div className="relative bg-secondary/30 h-64 sm:h-80 lg:h-full w-full shrink-0">
             <Swiper
@@ -98,7 +98,7 @@ const ProjectModal = ({ project, onClose }) => {
           </div>
 
           {/* Project Details */}
-          <div className="p-6 md:p-8 lg:p-10 overflow-y-auto flex-1 lg:h-full bg-white">
+          <div className="p-6 md:p-8 lg:p-10 overflow-y-auto flex-1 bg-white">
             {/* Category & Type */}
             <div className="flex items-center gap-2 mb-4">
               <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium uppercase tracking-wider">
